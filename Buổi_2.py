@@ -170,13 +170,13 @@ def getsuffix(a, b):
     for str_a in a:
         for str_b in b:
             # Kiểm tra nếu str_a là tiền tố của str_b
-            if str_b.startswith(str_a) and str_a:
+            if str_b.startswith(str_a) and str_a and str_a != str_b :
                 # Sử dụng rsplit để tách phần hậu tố từ str_b
                 suffix = str_b.rsplit(str_a, 1)[-1]
                 suffix_set.add(suffix)
             
             # Kiểm tra nếu str_b là tiền tố của str_a
-            elif str_a.startswith(str_b) and str_b:
+            elif str_a.startswith(str_b) and str_b and str_a != str_b:
                 # Sử dụng rsplit để tách phần hậu tố từ str_a
                 suffix = str_a.rsplit(str_b, 1)[-1]
                 suffix_set.add(suffix)
